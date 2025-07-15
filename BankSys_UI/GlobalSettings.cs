@@ -273,7 +273,7 @@ namespace BankSys_UI
                 {
                     Host = "smtp.gmail.com", Port = 587, EnableSsl = true,
                     DeliveryMethod = SmtpDeliveryMethod.Network, UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential(fromAddress.Address, "btitwjhvyuxthcev")
+                    Credentials = new NetworkCredential(fromAddress.Address, "Your-App-Password")
                 };
 
                 using (var message = new MailMessage(fromAddress, toAddress)
