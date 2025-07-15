@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D6C0513D-C749-43CD-BBF9-104356AB416A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BankSys_UI</RootNamespace>
+    <AssemblyName>BankSys_UI</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNetEnv, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetEnv.3.1.1\lib\netstandard1.3\DotNetEnv.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Configuration.1.1.2\lib\netstandard1.1\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Configuration.Abstractions.1.1.2\lib\netstandard1.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Primitives.1.1.1\lib\netstandard1.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sprache, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Sprache.2.3.1\lib\net45\Sprache.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.AppContext.4.3.0\lib\net463\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.Tracing, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.Tracing.4.3.0\lib\net462\System.Diagnostics.Tracing.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Expressions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.3.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.InteropServices.4.3.0\lib\net463\System.Runtime.InteropServices.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounts\Controls\ctrlAccountDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Accounts\Controls\ctrlAccountDetails.Designer.cs">
+      <DependentUpon>ctrlAccountDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Controls\ctrlSearchAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Accounts\Controls\ctrlSearchAccount.Designer.cs">
+      <DependentUpon>ctrlSearchAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\frmAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\frmAccounts.Designer.cs">
+      <DependentUpon>frmAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\frmAddNewAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\frmAddNewAccount.Designer.cs">
+      <DependentUpon>frmAddNewAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\frmDeleteAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\frmDeleteAccount.Designer.cs">
+      <DependentUpon>frmDeleteAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\frmFindAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\frmFindAccount.Designer.cs">
+      <DependentUpon>frmFindAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\frmFindSerialNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\frmFindSerialNumber.Designer.cs">
+      <DependentUpon>frmFindSerialNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Members\frmEmailMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Members\frmEmailMember.Designer.cs">
+      <DependentUpon>frmEmailMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\frmDeposit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmDeposit.Designer.cs">
+      <DependentUpon>frmDeposit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\frmShowAccountTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\frmShowAccountTransactions.Designer.cs">
+      <DependentUpon>frmShowAccountTransactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\frmShowAllTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmShowAllTransactions.Designer.cs">
+      <DependentUpon>frmShowAllTransactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\frmShowTransactionTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmShowTransactionTypes.Designer.cs">
+      <DependentUpon>frmShowTransactionTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\frmTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmTransactions.Designer.cs">
+      <DependentUpon>frmTransactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\frmTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmTransfer.Designer.cs">
+      <DependentUpon>frmTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\frmWithdraw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmWithdraw.Designer.cs">
+      <DependentUpon>frmWithdraw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Log Registry\frmLogRegistry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log Registry\frmLogRegistry.Designer.cs">
+      <DependentUpon>frmLogRegistry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\frmSearchAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\frmSearchAccount.Designer.cs">
+      <DependentUpon>frmSearchAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\frmShowAllAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\frmShowAllAccounts.Designer.cs">
+      <DependentUpon>frmShowAllAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Controls\ctrlSearchUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\Controls\ctrlSearchUser.Designer.cs">
+      <DependentUpon>ctrlSearchUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Controls\ctrlUserDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\Controls\ctrlUserDetails.Designer.cs">
+      <DependentUpon>ctrlUserDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmAccessDenied.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmAccessDenied.Designer.cs">
+      <DependentUpon>frmAccessDenied.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmChangePermissions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmChangePermissions.Designer.cs">
+      <DependentUpon>frmChangePermissions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmDeleteUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmDeleteUser.Designer.cs">
+      <DependentUpon>frmDeleteUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmFindUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmFindUser.Designer.cs">
+      <DependentUpon>frmFindUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Homepage\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Homepage\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmAddNewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmAddNewUser.Designer.cs">
+      <DependentUpon>frmAddNewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Help\frmHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help\frmHelp.Designer.cs">
+      <DependentUpon>frmHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Homepage\frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Homepage\frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmSearchUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmSearchUser.Designer.cs">
+      <DependentUpon>frmSearchUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmShowAllUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmShowAllUsers.Designer.cs">
+      <DependentUpon>frmShowAllUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmUsers.Designer.cs">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSettings.cs" />
+    <Compile Include="Members\Controls\ctrlMemberDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Members\Controls\ctrlMemberDetails.Designer.cs">
+      <DependentUpon>ctrlMemberDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Members\Controls\ctrlSearchMember.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Members\Controls\ctrlSearchMember.Designer.cs">
+      <DependentUpon>ctrlSearchMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Members\frmAddNewMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Members\frmAddNewMember.Designer.cs">
+      <DependentUpon>frmAddNewMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Members\frmDeleteMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Members\frmDeleteMember.Designer.cs">
+      <DependentUpon>frmDeleteMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Members\frmFindMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Members\frmFindMember.Designer.cs">
+      <DependentUpon>frmFindMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Members\frmMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Members\frmMembers.Designer.cs">
+      <DependentUpon>frmMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Members\frmSearchMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Members\frmSearchMember.Designer.cs">
+      <DependentUpon>frmSearchMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Members\frmShowAllMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Members\frmShowAllMembers.Designer.cs">
+      <DependentUpon>frmShowAllMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidationSettings.cs" />
+    <EmbeddedResource Include="Accounts\Controls\ctrlAccountDetails.resx">
+      <DependentUpon>ctrlAccountDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\Controls\ctrlSearchAccount.resx">
+      <DependentUpon>ctrlSearchAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\frmAccounts.resx">
+      <DependentUpon>frmAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\frmAddNewAccount.resx">
+      <DependentUpon>frmAddNewAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\frmDeleteAccount.resx">
+      <DependentUpon>frmDeleteAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\frmFindAccount.resx">
+      <DependentUpon>frmFindAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\frmFindSerialNumber.resx">
+      <DependentUpon>frmFindSerialNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members\frmEmailMember.resx">
+      <DependentUpon>frmEmailMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmDeposit.resx">
+      <DependentUpon>frmDeposit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\frmShowAccountTransactions.resx">
+      <DependentUpon>frmShowAccountTransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmShowAllTransactions.resx">
+      <DependentUpon>frmShowAllTransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmShowTransactionTypes.resx">
+      <DependentUpon>frmShowTransactionTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmTransactions.resx">
+      <DependentUpon>frmTransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmTransfer.resx">
+      <DependentUpon>frmTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmWithdraw.resx">
+      <DependentUpon>frmWithdraw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log Registry\frmLogRegistry.resx">
+      <DependentUpon>frmLogRegistry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\frmSearchAccount.resx">
+      <DependentUpon>frmSearchAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\frmShowAllAccounts.resx">
+      <DependentUpon>frmShowAllAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\Controls\ctrlSearchUser.resx">
+      <DependentUpon>ctrlSearchUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\Controls\ctrlUserDetails.resx">
+      <DependentUpon>ctrlUserDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmAccessDenied.resx">
+      <DependentUpon>frmAccessDenied.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmChangePermissions.resx">
+      <DependentUpon>frmChangePermissions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmDeleteUser.resx">
+      <DependentUpon>frmDeleteUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmFindUser.resx">
+      <DependentUpon>frmFindUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Homepage\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmAddNewUser.resx">
+      <DependentUpon>frmAddNewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help\frmHelp.resx">
+      <DependentUpon>frmHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Homepage\frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmSearchUser.resx">
+      <DependentUpon>frmSearchUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmShowAllUsers.resx">
+      <DependentUpon>frmShowAllUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmUsers.resx">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members\Controls\ctrlMemberDetails.resx">
+      <DependentUpon>ctrlMemberDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members\Controls\ctrlSearchMember.resx">
+      <DependentUpon>ctrlSearchMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members\frmAddNewMember.resx">
+      <DependentUpon>frmAddNewMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members\frmDeleteMember.resx">
+      <DependentUpon>frmDeleteMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members\frmFindMember.resx">
+      <DependentUpon>frmFindMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members\frmMembers.resx">
+      <DependentUpon>frmMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members\frmSearchMember.resx">
+      <DependentUpon>frmSearchMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members\frmShowAllMembers.resx">
+      <DependentUpon>frmShowAllMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include=".env">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BankSys_Business\BankSys_Business.csproj">
+      <Project>{df37a3e7-518b-4537-9a0c-12db0516daff}</Project>
+      <Name>BankSys_Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closeBlack32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Male 512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User 32 -2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\185038_home_house_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\858133.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\github.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linkedin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undraw_group-chat_4xw0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undraw_people-search_xpq4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undraw_the-search_cjxa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undraw_throw-away_k2t5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undraw_vault_tyfh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undraw_web-search_9qqc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eye_Closed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eye_Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\images %281%29.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\10408102.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\8995959.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\8953561.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\8425740.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\8406164.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\login-concept-illustration_114360-739.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\sign-concept-illustration_86047-298.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\sign-concept-illustration_114360-125.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\undraw_enter-password_1kl4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\9184081.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\15607358.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\15707685.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\undraw_warning_tl76.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\ad.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\access-denied-illustration-download-in-svg-png-gif-file-formats--not-have-permission-login-system-warning-issue-empty-states-pack-user-interface-illustrations-5006815.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\deposit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\cash-withdrawal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\money-transfer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\d1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\d2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\d3.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\w1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\t1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\t2.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\t3.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\t4.jpeg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

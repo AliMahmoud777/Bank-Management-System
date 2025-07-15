@@ -1,0 +1,12 @@
+.env
+
+.vs/
+*.user
+*.suo
+
+bin/
+obj/
+
+packages/
+*.nupkg
+*.snupkg
